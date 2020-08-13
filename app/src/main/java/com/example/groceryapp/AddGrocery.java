@@ -21,7 +21,6 @@ public class AddGrocery extends AppCompatActivity {
     DatabaseHandler db;
     SQLiteDatabase sqLiteDatabase;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

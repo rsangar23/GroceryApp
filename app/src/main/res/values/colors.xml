@@ -2,5 +2,9 @@
 <resources>
     <color name="colorPrimary">#badc58</color>
     <color name="colorPrimaryDark">#6ab04c</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#FF4081</color>
+
+<!--    badc58-->
+    <!--    6ab04c-->
+<!--    D81B60-->
 </resources>

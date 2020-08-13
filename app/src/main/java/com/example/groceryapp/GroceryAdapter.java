@@ -37,7 +37,7 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.GroceryV
     @NonNull
     @Override
     public GroceryAdapter.GroceryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View item=(View) LayoutInflater.from(viewGroup.getContext()).
+        View item = LayoutInflater.from(viewGroup.getContext()).
                 inflate(R.layout.list_item, viewGroup, false);
 
         return new GroceryViewHolder(item);

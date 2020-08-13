@@ -15,4 +15,15 @@
     <string name="quantity">Quantity</string>
     <string name="update">Update</string>
     <string name="search">Search</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register">Register</string>
+    <string name="get_registered_here">Get Registered Here</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="swipe_right_for_login">Swipe Right For Login</string>
+    <string name="get_your_grocery_here">Get Your Grocery Here</string>
+    <string name="swipe_left_for_register">Swipe Left For Register</string>
 </resources>
