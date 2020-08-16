@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:strokeWidth="4dp"
+    app:strokeColor="@android:color/white"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <LinearLayout
@@ -9,30 +14,34 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/colorPrimary"
-        android:padding="16dp">
+        android:paddingBottom="10dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:padding="10dp"
             android:text="User Registered Successfully"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:fontFamily="@font/roboto_regular"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/colorPrimary">
+            android:textSize="20dp" />
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="4dp"
             android:background="@drawable/ic_success" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
-</LinearLayout>
+    <!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:background="@color/colorPrimary">-->
+
+<!--       -->
+
+<!--    </RelativeLayout>-->
+
+</android.support.design.card.MaterialCardView>

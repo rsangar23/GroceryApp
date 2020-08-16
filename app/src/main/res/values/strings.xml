@@ -26,4 +26,6 @@
     <string name="swipe_right_for_login">Swipe Right For Login</string>
     <string name="get_your_grocery_here">Get Your Grocery Here</string>
     <string name="swipe_left_for_register">Swipe Left For Register</string>
+    <string name="open_navigation">Open Navigation Drawer</string>
+    <string name="close_navigation">Close Navigation Drawer</string>
 </resources>

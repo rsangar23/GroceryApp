@@ -23,13 +23,13 @@ import java.util.ArrayList;
 public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.GroceryViewHolder> {
 
     ArrayList<Grocery> grocery;
-    GroceryList context;
+    Context context;
 
 
     public GroceryAdapter(ArrayList<Grocery> grocery){
         this.grocery = grocery;
     }
-    public GroceryAdapter(ArrayList<Grocery> grocery,GroceryList context){
+    public GroceryAdapter(ArrayList<Grocery> grocery,Context context){
         this.grocery = grocery;
         this.context = context;
     }
@@ -99,7 +99,7 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.GroceryV
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         new DatabaseHandler(context).deleteGrocery(grocery.get(i));
-                        context.getList();
+//                        context.getList();
                         Toast.makeText(context, "Record Deleted", Toast.LENGTH_LONG).show();
                         dialog.cancel();
                     }

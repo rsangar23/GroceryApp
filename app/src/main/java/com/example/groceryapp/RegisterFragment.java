@@ -2,10 +2,9 @@ package com.example.groceryapp;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.AlertDialogLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +14,8 @@ import android.widget.Toast;
 
 import com.example.groceryapp.API.APIClient;
 import com.example.groceryapp.API.APIInterface;
-import com.example.groceryapp.API.User;
+import com.example.groceryapp.API.UserResult;
 
-import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -69,41 +67,51 @@ public class RegisterFragment extends Fragment {
 
     private void userSignUp()
     {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setView(R.layout.my_dialog);
-
-        alertDialog = builder.create();
-        alertDialog.show();
-
         String name = name_et.getText().toString().trim();
         String email = email_et.getText().toString().trim();
         String password = password_et.getText().toString().trim();
         String cpass = cpass_et.getText().toString().trim();
 
-        User user = new User(name, email, password, cpass);
+        UserResult user = new UserResult(name, email, password, cpass);
 
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
-        Call<User> call = apiInterface.createUser(user.getName(),
+        Call<UserResult> call = apiInterface.createUser(user.getName(),
                                                     user.getEmail(),
                                                     user.getPassword(),
                                                     user.getC_password());
 
-        call.enqueue(new Callback<User>() {
+        call.enqueue(new Callback<UserResult>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                alertDialog.dismiss();
+            public void onResponse(Call<UserResult> call, Response<UserResult> response) {
+//                alertDialog.dismiss();
+//                Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
 
-//                if(response.isSuccessful()){
+                if(response.isSuccessful()){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setView(R.layout.my_dialog);
+
+                    alertDialog = builder.create();
+                    alertDialog.show();
+
+                    final Handler handler = new Handler();
+                    final Runnable runnable = new Runnable() {
+                        @Override
+                        public void run() {
+                            if(alertDialog.isShowing())
+                            {
+                                alertDialog.dismiss();
+                            }
+                        }
+                    };
+                    handler.postDelayed(runnable, 2000);
 //                    Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-//
-//                    alertDialog.dismiss();
-//
-//                }
+                }else{
+                    Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<UserResult> call, Throwable t) {
 
                 Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
 

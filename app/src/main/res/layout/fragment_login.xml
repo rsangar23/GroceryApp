@@ -42,6 +42,7 @@
         android:layout_above="@+id/et_password"
         android:background="@drawable/et_custom"
         android:textSize="15dp"
+        android:nextFocusForward="@id/et_password"
         />
 
     <EditText

@@ -4,30 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/fab_margin"
     tools:context=".GroceryList"
     android:orientation="vertical"
-    >
+    android:layout_marginTop="?attr/actionBarSize">
 
-    <EditText
-        android:id="@+id/txt_search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/search"
-        />
-
-    <ProgressBar
-        android:id="@+id/prg_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBaseline_toBaselineOf="parent"
-        />
-    
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.support.v7.widget.RecyclerView>
+   <FrameLayout
+       android:id="@+id/content_frame"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
 
 </LinearLayout>

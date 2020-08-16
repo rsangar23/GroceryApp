@@ -1,22 +1,37 @@
 package com.example.groceryapp.API;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class User {
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+    @SerializedName("name")
+    @Expose
+    private String name;
+    @SerializedName("email")
+    @Expose
+    private String email;
+    @SerializedName("email_verified_at")
+    @Expose
+    private Object emailVerifiedAt;
+    @SerializedName("created_at")
+    @Expose
+    private String createdAt;
+    @SerializedName("updated_at")
+    @Expose
+    private String updatedAt;
+    @SerializedName("access_token")
+    @Expose
+    private String accessToken;
 
-    String name, email, password, c_password, message;
-
-    public User(String name, String email, String password, String c_password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.c_password = c_password;
+    public Integer getId() {
+        return id;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -35,19 +50,36 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public Object getEmailVerifiedAt() {
+        return emailVerifiedAt;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmailVerifiedAt(Object emailVerifiedAt) {
+        this.emailVerifiedAt = emailVerifiedAt;
     }
 
-    public String getC_password() {
-        return c_password;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public void setC_password(String c_password) {
-        this.c_password = c_password;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
 }
